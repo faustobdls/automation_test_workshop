@@ -295,6 +295,39 @@ void main() {
     expect(fulanoButton.style.borderColor, ColorsTheme.shadesOfLight[500]);
     expect(fulanoButton.style.backgroundColor, ColorsTheme.shadesOfLight[500]);
   });
+  testWidgets('[FulanoButton] [State: standard] [Label = "Aqui jás um botão." Icon = Icons.home]',
+      (WidgetTester tester) async {
+    FulanoButton fulanoButton = const FulanoButton(
+      label: "Aqui jás um botão.",
+      style: FulanoButtonStyle.standard,
+      icon: Icons.home,
+    );
+    await _createWidget(tester, fulanoButton);
+
+    expect(fulanoButton.label, "Aqui jás um botão.");
+    expect(find.byType(Text), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(fulanoButton.style, FulanoButtonStyle.standard);
+    expect(fulanoButton.style.labelColor, ColorsTheme.shadesOfLight100);
+    expect(fulanoButton.style.borderColor, Colors.transparent);
+    expect(fulanoButton.style.backgroundColor, ColorsTheme.primaryColorMain);
+  });
+  testWidgets('[FulanoButton] [State: standard] [Icon = Icons.home]',
+      (WidgetTester tester) async {
+    FulanoButton fulanoButton = const FulanoButton(
+      style: FulanoButtonStyle.standard,
+      icon: Icons.home,
+    );
+    await _createWidget(tester, fulanoButton);
+
+    expect(fulanoButton.label, "");
+    expect(find.byType(Text), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(fulanoButton.style, FulanoButtonStyle.standard);
+    expect(fulanoButton.style.labelColor, ColorsTheme.shadesOfLight100);
+    expect(fulanoButton.style.borderColor, Colors.transparent);
+    expect(fulanoButton.style.backgroundColor, ColorsTheme.primaryColorMain);
+  });
 
   testWidgets('[FulanoButton] [Tap Test] 0 => 1 => 2 => 3 => 4',
       (WidgetTester tester) async {

@@ -1,3 +1,4 @@
+import 'package:automation_test_workshop/screens/buttom.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,12 @@ final _router = GoRouter(
           path: FavoritesPage.routeName,
           builder: (context, state) {
             return const FavoritesPage();
+          },
+        ),
+        GoRoute(
+          path: ButtonsPage.routeName,
+          builder: (context, state) {
+            return const ButtonsPage();
           },
         ),
       ],

@@ -1,3 +1,4 @@
+import 'package:automation_test_workshop/screens/buttom.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Testing Sample'),
+        leading: IconButton(
+          onPressed: () => context.go('/${ButtonsPage.routeName}'),
+          icon: const Icon(Icons.abc),
+        ),
         actions: <Widget>[
           TextButton.icon(
             onPressed: () {
@@ -41,7 +46,7 @@ class ItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var favoritesList = Provider.of<Favorites>(context);
+    var favoritesList = context.get<Favorites>();
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -75,4 +80,8 @@ class ItemTile extends StatelessWidget {
       ),
     );
   }
+}
+
+extension ContextExt on BuildContext {
+  T get<T>() => Provider.of<T>(this);
 }
