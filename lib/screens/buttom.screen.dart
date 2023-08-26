@@ -24,6 +24,32 @@ class ButtonsPage extends StatelessWidget {
                     : FulanoButtonStyle.standard,
               ),
             ),
+            const Center(
+              child: FulanoButton(
+                label: "BUTbahsdgjashdgjashdgjashdgjahTAO",
+                icon: Icons.home_max,
+                style: FulanoButtonStyle.standard,
+              ),
+            ),
+            const Center(
+              child: FulanoButton(
+                label: "BUTTAO",
+                icon: Icons.home_max,
+                style: FulanoButtonStyle.standardOutline,
+              ),
+            ),
+            const Center(
+              child: FulanoButton(
+                label: "BUTTAO",
+                style: FulanoButtonStyle.loading,
+              ),
+            ),
+            const Center(
+              child: FulanoButton(
+                label: "BUTTAO",
+                style: FulanoButtonStyle.loadingOutline,
+              ),
+            ),
           ],
         ),
       ),

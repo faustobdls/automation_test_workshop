@@ -98,7 +98,7 @@ class FulanoButton extends StatelessWidget {
     return Icon(
       icon,
       size: fontSize + 4,
-      color: ColorsTheme.shadesOfLight[100],
+      color: style.labelColor,
     );
   }
 
